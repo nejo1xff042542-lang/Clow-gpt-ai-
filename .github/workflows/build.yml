@@ -22,12 +22,23 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
 
-    - name: Build APK
-      run: ./gradlew assembleDebug
+    - name: Build APK (Automatic Path Fix)
+      run: |
+        if [ -f "./gradlew" ]; then
+          ./gradlew assembleDebug
+        elif [ -f "./app/gradlew" ]; then
+          cd app && ./gradlew assembleDebug
+        else
+          GRADLEW_PATH=$(find . -name gradlew | head -n 1)
+          if [ -z "$GRADLEW_PATH" ]; then
+            echo "Gradlew file nahi mili!" && exit 1
+          fi
+          cd $(dirname "$GRADLEW_PATH") && ./gradlew assembleDebug
+        fi
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
         name: clow-gpt-apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: "**/build/outputs/apk/debug/*.apk"
         
