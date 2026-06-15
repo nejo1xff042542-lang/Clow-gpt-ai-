@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "694121547757",
+    "project_id": "clowgptai",
+    "storage_bucket": "clowgptai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694121547757:android:e8474591f000e05eac89e4",
+        "android_client_info": {
+          "package_name": "Com.clowaigot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694121547757-gba4p0m0c96df55nj5j9m9jk11r3rst8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7Hd1_OVdisZFbh0Tnep1vrg7W9oN5Xn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "694121547757-gba4p0m0c96df55nj5j9m9jk11r3rst8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
